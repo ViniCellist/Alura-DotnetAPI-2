@@ -31,7 +31,9 @@ namespace FilmesApi.Controllers
         [HttpGet]
         public IEnumerable<ReadCinemaDTO> RecuperaCinemas()
         {
-            return _mapper.Map<List<ReadCinemaDTO>>(_context.Cinemas.ToList());
+            var listaDeCinemasBanco = _context.Cinemas.ToList();
+            var listaDeCinemas = _mapper.Map<List<ReadCinemaDTO>>(_context.Cinemas.ToList());
+            return listaDeCinemas;
         }
 
         [HttpGet("{id}")]
