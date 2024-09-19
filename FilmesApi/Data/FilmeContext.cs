@@ -24,7 +24,7 @@ public class FilmeContext : DbContext
             .HasForeignKey(sessao => sessao.FilmeId);
 
         builder.Entity<Endereco>()
-            .HasOne(endereco = > endereco.Cinema)
+            .HasOne(endereco => endereco.Cinema)
             .WithMany(cinema => cinema.Endereco)
             .OnDelete(DeleteBehavior.Restrict);
     }
